@@ -35,9 +35,9 @@ function Home() {
           <div className="relative flex flex-col items-center justify-center h-full text-white p-8">
             <h2 className="text-5xl font-bold mb-6">Find Your Perfect Ride Anytime, Anywhere</h2>
             <div className="bg-white rounded-lg p-4 w-full max-w-3xl flex items-center space-x-4">
-              <input type="text" placeholder="Location" className="flex-1 p-2 rounded border" />
-              <input type="date" className="p-2 rounded border" />
-              <select className="p-2 rounded border">
+              <input type="text" placeholder="Location" className="flex-1 p-2 rounded border text-black" />
+              <input type="date" className="p-2 rounded border text-black" />
+              <select className="p-2 rounded border text-black">
                 <option>Any Car</option>
                 <option>SUV</option>
                 <option>Sedan</option>
