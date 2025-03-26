@@ -1,0 +1,30 @@
+name: Code Validation
+
+on:
+  push:
+    branches:
+      - main  # Change this if you want to trigger on different branches
+      - dev   # You can add multiple branches
+
+jobs:
+  validate:
+    name: Validate Code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18 # Change as per your project's Node.js version
+
+      - name: Install Dependencies
+        run: npm install  # Change this if using yarn/pnpm
+
+      - name: Run ESLint for Code Validation
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx
+
+      - name: Run Tests (if applicable)
+        run: npm test  # Remove this step if no tests are present
