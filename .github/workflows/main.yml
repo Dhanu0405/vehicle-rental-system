@@ -22,12 +22,12 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-        working-directory: ./client  # <-- change this based on your actual folder
+        working-directory: ./client  # Make sure this is correct
 
       - name: Run ESLint for Code Validation
-        run: npx eslint . --ext .js,.jsx,.ts,.tsx
-        working-directory: ./client  # <-- same here
+        run: npx eslint .
+        working-directory: ./client  # Keep this
 
       - name: Run Tests (if applicable)
         run: npm test
-        working-directory: ./client  # <-- and here
+        working-directory: ./client
