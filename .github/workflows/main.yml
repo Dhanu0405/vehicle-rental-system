@@ -3,8 +3,8 @@ name: Code Validation
 on:
   push:
     branches:
-      - main  # Change this if you want to trigger on different branches
-      - dev   # You can add multiple branches
+      - main
+      - dev
 
 jobs:
   validate:
@@ -18,13 +18,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18 # Change as per your project's Node.js version
+          node-version: 18
 
       - name: Install Dependencies
-        run: npm install  # Change this if using yarn/pnpm
+        run: npm install
+        working-directory: ./client  # <-- change this based on your actual folder
 
       - name: Run ESLint for Code Validation
         run: npx eslint . --ext .js,.jsx,.ts,.tsx
+        working-directory: ./client  # <-- same here
 
       - name: Run Tests (if applicable)
-        run: npm test  # Remove this step if no tests are present
+        run: npm test
+        working-directory: ./client  # <-- and here
